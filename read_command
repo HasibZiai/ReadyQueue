@@ -1,0 +1,15 @@
+long read_command(char commandBuffer[]) {
+	long len = 0; // # of characters in the command line
+
+				  /* TODO: print the cmd> prompt and read what the user enters on the command line
+				  *       until the user enters newline
+				  */
+	int n;
+	while ((n = read(0, commandBuffer, MAX_LINE)) > 0)
+	{
+		write(1, commandBuffer, n);
+		len++;
+	}
+
+	return len;
+}
